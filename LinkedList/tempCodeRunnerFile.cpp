@@ -1,0 +1,1 @@
+    head->next = new ListNode(2);
