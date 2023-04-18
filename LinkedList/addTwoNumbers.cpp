@@ -38,7 +38,16 @@ ListNode *addTwoNumbers(ListNode *l1, ListNode *l2)
         else
             carry = 0;
 
-        ListNode *temp = new ListNode(sum % 10);
+        ListNode *temp = nullptr;
+        if (sum > 9)
+        {
+            temp = new ListNode(sum % 10);
+        }
+        else
+        {
+            temp = new ListNode(sum);
+        }
+
         if (ptr == nullptr)
             head = temp;
         else
