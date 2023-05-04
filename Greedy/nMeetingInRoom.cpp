@@ -1,11 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool comparator(pair<int, int> a, pair<int, int> b)
-{
-
-    return a.second < b.second;
-}
 int maxMeetings(int start[], int end[], int n)
 {
     if (n < 1)
@@ -15,7 +10,8 @@ int maxMeetings(int start[], int end[], int n)
     {
         meetings.push_back({start[i], end[i]});
     }
-    sort(meetings.begin(), meetings.end(), comparator);
+    sort(meetings.begin(), meetings.end(), [](const pair<int, int> &a, const pair<int, int> &b)
+         { return a.second < b.second; });
     // Your code here
 
     int count = 1;
