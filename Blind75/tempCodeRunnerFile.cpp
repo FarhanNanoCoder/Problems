@@ -1,1 +1,1 @@
-  return nums[0];
+    head->next->next->next->next = new ListNode(5);
