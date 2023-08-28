@@ -1,1 +1,1 @@
-    // cout<<t.size()<<endl;
+  return nums[0];
