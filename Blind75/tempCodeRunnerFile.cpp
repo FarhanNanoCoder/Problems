@@ -1,1 +1,2 @@
-    head->next->next->next->next = new ListNode(5);
+    lists.push_back(l2);
+    lists.push_back(l3);
