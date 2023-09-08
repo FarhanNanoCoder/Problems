@@ -9,6 +9,7 @@
         "utility": "cpp",
         "vector": "cpp",
         "string": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "new": "cpp"
     }
 }
