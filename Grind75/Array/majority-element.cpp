@@ -24,3 +24,5 @@ int main(){
     cout<<majorityElement(nums);
     return 0;
 }
+
+// https://leetcode.com/problems/majority-element/
