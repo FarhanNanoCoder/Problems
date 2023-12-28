@@ -13,3 +13,5 @@ int main(){
     cout<<canJump(nums);
     return 0;
 }
+
+//https://leetcode.com/problems/jump-game/
