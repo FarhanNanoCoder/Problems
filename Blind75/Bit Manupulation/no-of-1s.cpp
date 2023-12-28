@@ -19,3 +19,5 @@ int main()
     cout << hammingWeight(n);
     return 0;
 }
+
+//https://leetcode.com/problems/number-of-1-bits/
