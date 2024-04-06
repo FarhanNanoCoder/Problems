@@ -53,10 +53,18 @@ int floor(vector<int> nums, int target){
     }
     return f;
 }
+int countOccur(vector<int> & nums,int target){
+    int lb = lowerBound(nums,target);
+    int ub = upperBound(nums,target)-1;
+    int c = ub-lb+1;
+    return c;
+
+}
 int main()
 {
     vector<int> nums = {1, 2, 3, 4, 6, 6, 6, 6, 7, 8};
     cout <<"lb: "<<lowerBound(nums, 5) << endl;
     cout<<"ub :"<<upperBound(nums,6)<<endl;
     cout<<"fi :"<<floor(nums,-1)<<endl;
+    cout<<"count occur: "<<countOccur(nums,2)<<endl;
 }
