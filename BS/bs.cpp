@@ -56,7 +56,7 @@ int floor(vector<int> nums, int target){
 int main()
 {
     vector<int> nums = {1, 2, 3, 4, 6, 6, 6, 6, 7, 8};
-    cout << lowerBound(nums, 5) << endl;
-    cout<<upperBound(nums,6)<<endl;
-    cout<<floor(nums,-1)<<endl;
+    cout <<"lb: "<<lowerBound(nums, 5) << endl;
+    cout<<"ub :"<<upperBound(nums,6)<<endl;
+    cout<<"fi :"<<floor(nums,-1)<<endl;
 }
