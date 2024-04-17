@@ -22,6 +22,8 @@ int findMin(vector<int> &nums)
 }
 int main()
 {
-    vector<int> nums={7,8,9,1,2,3,7,5,6};
-    cout<<findMin(nums);
+    vector<int> nums = {3, 4, 5, 1, 2};
+    return 0;
 }
+
+// https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
