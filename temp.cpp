@@ -1,62 +1,94 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-int lowerBound(vector<int> nums, int target)
-{
-    int lb = nums.size();
-    int l = 0, r = nums.size() - 1;
-    while (l <= r)
-    {
-        int m = (l + r )/ 2;
-        if (nums[m] >= target)
-        {
-            r = m - 1;
-            lb = m;
-        }
-        else
-        {
-            l = m + 1;
-        }
-        // cout << "l-r" << l << "" << r << endl;
-    }
-    return lb;
+
+
+struct ListNode{
+
+    int val;
+    ListNode* next;
+    ListNode():val(0),next(nullptr){};
+    ListNode(int x):val(x),next(nullptr){};
+    ListNode(int x, ListNode*next):val(x),next(next){}
+};
+
+void insertNode(ListNode* head, int val){
+    while(head->next!=nullptr) head=head->next;
+    ListNode* ptr = new ListNode(val);
+    head->next = ptr;
 }
-int upperBound(vector<int> nums, int target)
-{
-    int lb = nums.size();
-    int l = 0, r = nums.size() - 1;
-    while (l <= r)
-    {
-        int m = (l + r )/ 2;
-        if (nums[m] > target)
-        {
-            r = m - 1;
-            lb = m;
-        }
-        else
-        {
-            l = m + 1;
+
+void printList(ListNode* head){
+    while(head!=nullptr){
+        cout<<head->val<<" ";
+        head= head->next;
+    }
+}
+
+void insertAfter(ListNode* head,int pos, int val){
+    ListNode* ptr = head;
+    pos--;
+    while(pos--){
+        if(ptr!=nullptr) ptr=ptr->next;
+        else {
+            cout<<"Invalid position"<<endl;
+            return;
         }
     }
-    return lb;
+    if(ptr==nullptr){
+        cout<<"Invalid position"<<endl;
+        return;
+    }
+    ListNode* temp = new ListNode(val);
+    temp->next = ptr->next;
+    ptr->next = temp;
 }
-int floor(vector<int> nums, int target){
-    int l=0,r=nums.size()-1;
-    int f=-1;
-    while(l<=r){
-        int m= (l+r)/2;
-        if(nums[m]<=target){
-            f=m;
-            l=m+1;
-        }else{
-            r=m-1;
+/*
+ListNode* insertBefore(ListNode* head,int pos, int val){
+    ListNode* ptr = head;
+    if(pos==1){
+        ListNode* temp = new ListNode(val);
+        temp->next=head;
+        return temp;
+    }
+    pos-=2;
+    while(pos--){
+        if(ptr!=nullptr) ptr=ptr->next;
+        else {
+            cout<<"Invalid position"<<endl;
+            return head;
         }
     }
-    return f;
+    if(ptr==nullptr){
+        cout<<"Invalid position"<<endl;
+        return head;
+    }
+    ListNode* temp = new ListNode(val);
+    temp->next = ptr->next;
+    ptr->next = temp;
+    return head;
 }
-int main()
-{
-    vector<int> nums = {1, 2, 3, 4, 6, 6, 6, 6, 7, 8};
-    cout << lowerBound(nums, 5) << endl;
-    cout<<upperBound(nums,6)<<endl;
-    cout<<floor(nums,-1)<<endl;
+*/
+
+ListNode* reverseList(ListNode* head){
+    if(head==nullptr || head->next==nullptr) return head;
+    ListNode* prev=nullptr;
+    ListNode* curr=head;
+    ListNode* next=head->next;
+    while(next!=nullptr){
+        curr->next = prev;
+        prev= curr;
+        curr = next;
+        next= next->next;
+    }
+    curr->next = prev;
+    return curr;
+}
+int main(){
+    ListNode* head = new ListNode(1);
+    insertNode(head,2);
+
+    //insertAfter(head,4,4);
+    //head= insertBefore(head,4,4);
+    head = reverseList(head);
+    printList(head);
 }

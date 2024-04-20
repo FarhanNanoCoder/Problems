@@ -70,6 +70,19 @@ public:
         return true;
     }
 
+    void collectStrings(TrieNode *ptr, string str, vector<string> &res)
+    {
+        if (ptr->end)
+            res.push_back(str);
+        if (ptr->children.size() == 0)
+            return;
+
+        for (auto it : ptr->children)
+        {
+            collectStrings(it.second, str + it.first, res);
+        }
+    }
+
     vector<string> matchesPrefix(string prefix)
     {
         TrieNode *ptr = root;
@@ -94,19 +107,6 @@ public:
             cout << res[i] << endl;
 
         return res;
-    }
-
-    void collectStrings(TrieNode *ptr, string str, vector<string> &res)
-    {
-        if (ptr->end)
-            res.push_back(str);
-        if (ptr->children.size() == 0)
-            return;
-        
-        for (auto it : ptr->children)
-        {
-            collectStrings(it.second, str + it.first, res);
-        }
     }
 };
 
