@@ -1,4 +1,4 @@
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
     int divSum(vector<int>& nums,int d){
         int s=0;
