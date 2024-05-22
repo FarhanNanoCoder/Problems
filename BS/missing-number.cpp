@@ -21,3 +21,5 @@ int main()
     vector<int> a = {2, 3, 4, 7, 11};
     cout << findKthPositive(a, 5);
 }
+
+// https://leetcode.com/problems/kth-missing-positive-number/
