@@ -51,3 +51,5 @@ int main()
     cout << splitArray(nums, k) << endl;
     return 0;
 }
+
+// https://leetcode.com/problems/split-array-largest-sum/description/
