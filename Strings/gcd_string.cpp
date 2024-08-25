@@ -12,6 +12,7 @@ int gcd(int m, int n)
     }
     return m;
 }
+
 string gcdOfStrings(string str1, string str2)
 {
     int n = gcd(str1.size(), str2.size());
